@@ -69,6 +69,8 @@ function actualizarEnlaceActivo() {
         }
     });
 }
+window.addEventListener('scroll', actualizarEnlaceActivo);
+window.addEventListener('load', actualizarEnlaceActivo);
 
 
 const toggle = document.querySelector('.menu-toggle');

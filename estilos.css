@@ -53,9 +53,6 @@ section {
     height: 3px;
     opacity: 0.7;
 }
-.titulo:hover {
-    color: var(--wColor);
-}
 .subtitulo {
     font-family: 'f-textos', Arial;
     font-size: 28px;
@@ -204,9 +201,7 @@ section {
     bottom: -5px;
     width: 0%;
     height: 2px;
-
     background: linear-gradient(90deg, transparent, var(--mainColor), transparent);
-
     transition: 0.3s ease;
     transform: translateX(-50%);
 }
@@ -809,23 +804,15 @@ input, textarea {
 }
 
 /* ----- Responsivo ----- */
-/*Nav*/
-/*
-@media (min-width: 1200px) {
-    .titulo { font-size: 56px; }
-    .subtitulo { font-size: 28px; }
-    .texto { font-size: 24px; color: red;}
-}*/
-
 @media (min-width: 1600px) {
     .titulo { font-size: 60px; }
     .subtitulo { font-size: 32px; }
-    .texto { font-size: 28px; color: orange;}
+    .texto { font-size: 28px; }
 }
 @media (min-width: 2000px) {
     .titulo { font-size: 64px; }
     .subtitulo { font-size: 36px; }
-    .texto { font-size: 32px; color: aqua;}
+    .texto { font-size: 32px; }
     .card-1 {
         margin-top: 3rem;
     }
@@ -836,16 +823,13 @@ input, textarea {
 @media (min-width: 2520px) {
     .titulo { font-size: 68px; }
     .subtitulo { font-size: 40px; }
-    .texto { font-size: 36px; color: aqua;}
+    .texto { font-size: 36px; }
     .menu {
         transform: scale(1.2);
     }
 }
 
 @media (max-width: 1024px) {
-    .titulo {
-        color: red;
-    }
     .menu {
         padding: 5px 20px;
     }
@@ -861,7 +845,7 @@ input, textarea {
     }
 }
 @media (max-width: 768px) {
-    .titulo { font-size: 52px; color: greenyellow;}
+    .titulo { font-size: 52px; }
     .subtitulo { font-size: 24px; }
     .texto { font-size: 20px; }
     .card-1 {
@@ -869,7 +853,92 @@ input, textarea {
     }
     .texto-parallax {
         padding: 15px;
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     }
+    .texto-parallax::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px; 
+    background: linear-gradient(to right, transparent, rgba(24, 7, 255, 0.9), transparent); 
+    z-index: -1; 
+    opacity: 1; 
+}
+.card {
+    border-color: var(--mainColor);
+    box-shadow: 0 10px 30px rgba(75, 125, 195, 0.2);
+}
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--mainColor), transparent);
+    transform: translateX(-50%);
+}
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    opacity: 1;
+    background: radial-gradient(circle at top, rgba(75, 125, 195, 0.15), transparent);
+}
+.card-b {
+    border-color: var(--secColor);
+    box-shadow: 0 10px 30px rgba(128, 0, 128, 0.2);
+}
+.card-b::before {
+    background: linear-gradient(90deg, transparent, var(--secColor), transparent);
+    transform: translateX(-50%);
+}
+.card-b::after {
+    background: radial-gradient(circle at top, rgba(128, 0, 128, 0.15), transparent);
+}
+    .subtituloA {
+    opacity: 1; 
+    }
+    .paso {
+    transform: translateY(-8px);
+    border-color: var(--mainColor);
+    box-shadow: 0 10px 25px rgba(75,125,195,0.2);
+}
+.paso-2 {
+    border-color: var(--secColor);
+    box-shadow: 0 10px 25px rgba(128,0,128,0.2);
+}
+.paso::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--mainColor), transparent);
+    transform: translateX(-50%);
+}
+.paso-2::before {
+    background: linear-gradient(90deg, transparent, var(--secColor), transparent);
+    transform: translateX(-50%);
+}
+.paso p {
+    opacity: 1;
+}
+.numero-2::before {
+    background: var(--secColor);
+    box-shadow: 0 0 10px var(--secColor);
+}
+.glass-3 {
+    border: 1px solid rgba(128, 0, 128, 0.3);
+    background: rgba(133, 75, 195, 0.08);
+    box-shadow: inset 0 0 10px rgba(128, 0, 128, 0.2);
+}
+
 }
 
 @media (max-width: 560px) {
@@ -913,7 +982,7 @@ input, textarea {
         display: block;
         padding: 10px 0;
     }
-    .titulo { font-size: 40px; color: palevioletred;}
+    .titulo { font-size: 40px; }
     .subtitulo { font-size: 20px; }
     .texto { font-size: 16px; }
     .parallax {
@@ -949,7 +1018,7 @@ input, textarea {
     .contenido {
         padding: 20px 40px;
     }
-    .titulo { font-size: 38px; color: skyblue;}
+    .titulo { font-size: 38px; }
     .subtitulo { font-size: 18px; }
     .texto { font-size: 14px; }
 }
@@ -964,7 +1033,7 @@ input, textarea {
     .social ul li::before {
         font-size: 2.5em;
     }
-    .titulo { font-size: 36px; color: goldenrod;}
+    .titulo { font-size: 36px; }
     .subtitulo { font-size: 16px; }
     .texto { font-size: 12px; }
 }
