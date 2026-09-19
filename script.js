@@ -1,7 +1,4 @@
 
-/* =========================================================
-   SCROLL SUAVE EN ENLACES INTERNOS
-   ========================================================= */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
@@ -9,14 +6,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         const href = this.getAttribute('href');
 
-        // Ignorar enlaces vacíos o solamente "#"
         if (!href || href === '#') {
             return;
         }
 
         const target = document.querySelector(href);
 
-        // Si la sección no existe en esta página, no hacemos nada
         if (!target) {
             return;
         }
@@ -60,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#btn-2");
 
 
-    // Este efecto solamente existe en páginas con #card-1
     if (!card1) {
         return;
     }
@@ -75,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
             window.innerHeight;
 
 
-        /* Card principal */
 
         const fadeEndCard =
             vh;
